@@ -9,9 +9,12 @@ from sklearn.metrics import accuracy_score
 # Load dataset from a CSV file
 df = pd.read_csv('cleaned_data.csv')
 
-# Assuming your CSV has 'Message' column for the email text and 'Category' column for the spam label
+# Assuming the CSV has 'messages' for email content and 'category' for the labels (ham/spam)
 emails = df['Message'].tolist()  # Adjust column name if it's different
 labels = df['Category'].tolist()  # Adjust column name if it's different
+
+# Convert 'ham' to 0 and 'spam' to 1
+labels = [1 if label == 'spam' else 0 for label in labels]
 
 # Text preprocessing and vectorization
 vectorizer = TfidfVectorizer()
@@ -37,5 +40,4 @@ with open('vector123.pkl', 'wb') as vector_file:
     pickle.dump(vectorizer, vector_file)
 
 print("Model and vectorizer saved successfully!")
-
 
