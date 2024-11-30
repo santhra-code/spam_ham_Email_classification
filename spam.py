@@ -6,18 +6,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 
-# Sample dataset
-emails = [
-    "Congratulations, you have won a lottery!", 
-    "Hey, are you free tomorrow?", 
-    "Win money easily by clicking this link.", 
-    "Let's have lunch together this weekend.",
-    "Your account is at risk. Click to secure it now.",
-    "Do not miss this opportunity to earn $5000 weekly!",
-    "Can we reschedule our meeting?",
-    "Best discount deals just for you!"
-]
-labels = [1, 0, 1, 0, 1, 1, 0, 1]  # 1 = Spam, 0 = Not Spam
+# Load dataset from a CSV file
+df = pd.read_csv('cleaned_data.csv')
+
+# Assuming your CSV has 'Message' column for the email text and 'Category' column for the spam label
+emails = df['Message'].tolist()  # Adjust column name if it's different
+labels = df['Category'].tolist()  # Adjust column name if it's different
 
 # Text preprocessing and vectorization
 vectorizer = TfidfVectorizer()
@@ -43,3 +37,5 @@ with open('vector123.pkl', 'wb') as vector_file:
     pickle.dump(vectorizer, vector_file)
 
 print("Model and vectorizer saved successfully!")
+
+
