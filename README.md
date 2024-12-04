@@ -11,3 +11,11 @@ Feature Extraction: TF-IDF (Term Frequency-Inverse Document Frequency).
 Machine Learning Models: Support Vector Machine (SVM), Naive Bayes, Logistic Regression.
 Performance Metrics: Accuracy, Precision, Recall, F1-Score.
 Visualization: Visualizations of results using Matplotlib and Seaborn.
+
+
+Installation
+
+To run the project on your local machine, follow these steps:
+
+Clone the repository:
+
