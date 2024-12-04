@@ -18,5 +18,5 @@ Installation
 To run the project on your local machine, follow these steps:
 
 Clone the repository:
+https://github.com/santhra-code/spam_ham_email_classification
 
-gh repo clone santhra-code/spam_ham_email_classification
